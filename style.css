@@ -1,0 +1,33 @@
+.bg-light {
+background-image: url("cool-black-background-wallpaper_2348755.jpg");
+}
+
+.navbar-light .navbar-brand {
+    color: red;
+}
+
+
+
+.card {
+    position: absolute;
+    left: 300px;
+    bottom: 200px;
+}
+
+
+.btn-primary {
+    color: #fff;
+    background-color: red;
+    border-color: red;
+    position: absolute;
+    bottom: 350px;
+    left: 150px;
+}
+.btn-secondary {
+    color: #fff;
+    background-color: red;
+    border-color: red;
+    position: absolute;
+    right: 100px;
+    bottom: 350px;
+}
