@@ -31,3 +31,18 @@ background-image: url("cool-black-background-wallpaper_2348755.jpg");
     right: 100px;
     bottom: 350px;
 }
+
+.like {
+    
+        position: absolute;
+        bottom: 150px;
+        left: 375px;
+    
+}
+
+.dislike {
+        position: absolute;
+        bottom: 150px;
+        left: 500px;
+    }
+}
