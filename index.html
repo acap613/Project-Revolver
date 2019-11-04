@@ -1,68 +1,85 @@
-<!-- Demo Layout for Bootstrap (with cards) -->
 <!DOCTYPE html>
 <html lang="en-us">
 
 <head>
-
   <meta charset="UTF-8">
-  <title>My First Website</title>
+  <title>Revolver</title>
 
-  <!-- We need to bring in the bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="./style.css">
+  <!--jQuery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+  <!--Bootstrap-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+  <!--CSS-->
+  <!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 
+  <!--Firebase-->
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 
-  <style>
-    body {
-      background-image: url('smartdigital.gif');
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-size: cover;
-    }
-  </style>
 </head>
 
 <body>
-
-  <!-- As a heading -->
-  <nav class="navbar navbar-light bg-light">
-    <span class="navbar-brand mb-0 h1">Revolver</span>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </nav>
-
-  <button type="button" class="btn btn-primary btn-lg">
-    <</button> <button type="button" class="btn btn-secondary btn-lg">>
-  </button>
-
-  <div class="card mb-3" style="max-width: 1000px;">
-    <div class="row no-gutters">
-      <div class="col-md-4">
-        <img src="xXBh2KY.gif" class="card-img" alt="xXBh2KY.gif">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">Game Title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-            content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-      </div>
-    </div>
+  <!-- NAVBAR -->
+  <div class="container" id="container1">
+    <!-- <div class="row"> -->
+    <nav class="navbar navbar-light bg-light">
+      <span class="navbar-brand mb-0 h1">Revolver</span>
+      <form class="form-inline my-2 my-lg-0">
+        <input id="inputSearch" class="form-control mr-sm-2 " type="search" placeholder="Search" aria-label="Search">
+        <button id="buttonSearch" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </nav>
+    <!-- </div> -->
   </div>
 
-  <img id="dislike" src="./1301705_pixel-skull-png.png" width="50px">
-  <img id="like" src="./99-996502_heart-zelda-8-bit-heart-zelda-hd-png.png" width="50px">
+  <!-- ARROWS SIDES -->
+  <div id="small12" class="container col-sm-12">
+    <div class="row" id="rowCard">
 
+      <div id="buttonBack" class="col-md-2">
+        <button type="button" class="btn btn-primary btn-lg ">
 
+          <</button> </div> <!-- CARD -->
+            <div id="cardAll" class="col-md-8 ">
+              <div class="card mb-3 " style="max-width:1000px;">
+                <div class="row no-gutters">
+                  <div class="col-md-4">
+                    <img src="./assets/images/gif_sword.gif" class="card-img" alt="">
+                  </div>
+                  <div class="col-md-8">
+                    <!-- TEXT INSIDE CARD-->
+                    <div class="card-body">
+                      <h5 class="card-title">Game Title</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional
+                        content. This content is a little bit longer.</p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      <button id="buttonHeart"> <img id="like" src="./assets/images/heart02READY_500x700.jpeg"
+                          width="50px"></button>
+                      <button id="buttonSkull"><img id="dislike" src="./assets/images/skull02READY_500x700.jpeg"
+                          width="50px"></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
+            <div id="buttonNext" class="col-md-2">
+              <button type="button" class="btn btn-secondary btn-lg ">>
+              </button>
+            </div>
 
+      </div>
+    </div>
 
-
+    <!--Script-->
+    <script src="./js/app2.js"></script>
 </body>
+
+<footer></footer>
 
 </html>
