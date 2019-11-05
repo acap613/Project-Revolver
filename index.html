@@ -1,154 +1,76 @@
-<html lang="en">
-    
-    <head>
-      <meta charset="utf-8">
-      <title>RevolveR Test</title>
-      <style type="text/css">
-        button,
-        div,
-        form,
-        input {
-          margin: 10px;
-        }
-      </style>
-    </head>
-    
-    <body>
-    
-      <div class="container">
-        <h1>game search</h1>
-    
-        <!-- Rendered Buttons will get Dumped Here  -->
-        <div id="buttons-view"></div>
-    
-        <form id="game-form">
-          <label for="game-input">get a game!</label>
-          <input type="text" id="game-input">
-          <br>
-    
-          <!-- Button triggers new game to be added -->
-          <input id="add-game" type="submit" value="Add a game, Yo!">
-        </form>
-    
-        <!-- games will Get Dumped Here -->
-        <div id="games-view"></div>
-    
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script type="text/javascript">
-          // Initial array of games
-          var games = [];
-    
-          // displaygameInfo function re-renders the HTML to display the appropriate content
-          function displaygameInfo() {
-    
-            // var game = $(this).attr("data-name");
-            // var queryURL = " https://api-v3.igdb.com/games/ab8bfac628708992beb4a32f5a01c89c";
-            var settings = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://api.rawg.io/api/games?page_size=10&search=gta%20v",
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com",
-		"x-rapidapi-key": "f0457cbf4fmshcbc3914de65cf34p14fc1cjsn44b4be2f300a"
-	}
-}
+<!-- Demo Layout for Bootstrap (with cards) -->
+<!DOCTYPE html>
+<html lang="en-us">
 
-$.ajax(settings).done(function (response) {
-	console.log(response);
-            
-              // Creating a div to hold the game
-              var gameDiv = $("<div class='game'>");
-    
-              // Storing the rating data
-              var rating = response.Rated;
-    
-              // Creating an element to have the rating displayed
-              var pOne = $("<p>").text("Rating: " + rating);
-    
-              // Displaying the rating
-              gameDiv.append(pOne);
-    
-              // Storing the release year
-              var released = response.Released;
-    
-              // Creating an element to hold the release year
-              var pTwo = $("<p>").text("Released: " + released);
-    
-              // Displaying the release year
-              gameDiv.append(pTwo);
-    
-              // Storing the plot
-              var plot = response.Plot;
-    
-              // Creating an element to hold the plot
-              var pThree = $("<p>").text("Plot: " + plot);
-    
-              // Appending the plot
-              gameDiv.append(pThree);
-    
-              // Retrieving the URL for the image
-              var imgURL = response.Poster;
-    
-              // Creating an element to hold the image
-              var image = $("<img>").attr("src", imgURL);
-    
-              // Appending the image
-              gameDiv.append(image);
-    
-              // Putting the entire game above the previous games
-              $("#games-view").prepend(gameDiv);
-            });
-    
-          }
-    
-          // Function for displaying game data
-          function renderButtons() {
-    
-            // Deleting the games prior to adding new games
-            // (this is necessary otherwise you will have repeat buttons)
-            $("#buttons-view").empty();
-    
-            // Looping through the array of games
-            for (var i = 0; i < games.length; i++) {
-    
-              // Then dynamicaly generating buttons for each game in the array
-              // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
-              var a = $("<button>");
-              // Adding a class of game-btn to our button
-              a.addClass("game-btn");
-              // Adding a data-attribute
-              a.attr("data-name", games[i]);
-              // Providing the initial button text
-              a.text(games[i]);
-              // Adding the button to the buttons-view div
-              $("#buttons-view").append(a);
-            }
-          }
-    
-          // This function handles events where a game button is clicked
-          $("#add-game").on("click", function(event) {
-            event.preventDefault();
-            // This line grabs the input from the textbox
-            var game = $("#game-input").val().trim();
-    
-            // Adding game from the textbox to our array
-            games.push(game);
-    
-            // Calling renderButtons which handles the processing of our game array
-            renderButtons();
-          });
-    
-          // Adding a click event listener to all elements with a class of "game-btn"
-          $(document).on("click", ".game-btn", displaygameInfo);
-    
-          // Calling the renderButtons function to display the intial buttons
-          renderButtons();
-        </script>
+<head>
+
+  <meta charset="UTF-8">
+  <title>My First Website</title>
+
+  <!-- We need to bring in the bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./style.css">
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+
+
+
+  <style>
+    body {
+      background-image: url('smartdigital.gif');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- As a heading -->
+  <nav class="navbar navbar-light bg-light">
+    <span class="navbar-brand mb-0 h1">Revolver</span>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="game-input">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="search">Search</button>
+    </form>
+  </nav>
+
+  <button type="button" class="btn btn-primary btn-lg">
+    <</button> <button type="button" class="btn btn-secondary btn-lg">>
+  </button>
+
+  <div class="card mb-3" style="max-width: 1000px;">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="xXBh2KY.gif" class="card-img" alt="xXBh2KY.gif">
       </div>
-    </body>
-    
-    </html>
-    </script>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Game Title</h5>
+          <div id="rating"></div>
+          <div id="name"></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <img id="dislike" src="./1301705_pixel-skull-png.png" width="50px">
+  <img id="like" src="./99-996502_heart-zelda-8-bit-heart-zelda-hd-png.png" width="50px">
+
+
+  <!-- jquery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- moment.js -->
+<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  <!-- js link -->
+<script type="text/javascript" src="firebase.js"></script>
+<script type="text/javascript" src="logic.js"></script>
 </body>
+
 </html>
