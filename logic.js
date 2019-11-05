@@ -1,23 +1,4 @@
-
-
-
-
-
-
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyBmhEAC0h8yrrTxT4LBSPwBOwm7yo4GmJA",
-    authDomain: "revolver-ceb06.firebaseapp.com",
-    databaseURL: "https://revolver-ceb06.firebaseio.com",
-    projectId: "revolver-ceb06",
-    storageBucket: "revolver-ceb06.appspot.com",
-    messagingSenderId: "436349848784",
-    appId: "1:436349848784:web:632121ac7c76b2096522d5"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-
-        
+     
         //   // Initial array of games
           var games = [];
     
@@ -29,7 +10,7 @@
             var settings = {
               "async": true,
               "crossDomain": true,
-              "url": "https://api.rawg.io/api/games?page_size=1&search="+game+"",
+              "url": "https://api.rawg.io/api/games?page_size=10&search="+game+"",
               "method": "GET",
               "headers": {
                 "x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com",
@@ -39,18 +20,23 @@
 
             $.ajax(settings).done(function (response) {
                 console.log(response);
+                $("#name").text(JSON.stringify(response.results[0].name));
+                $("#date").text(JSON.stringify(response.results[0].released));
+                $("#rating").text(JSON.stringify(response.results[0].rating));
+                $("#name").text(JSON.stringify(response.results[0].name));
+                $("#name").text(JSON.stringify(response.results[0].name));
             
               // Creating a div to hold the game
-              var gameDiv = $("<div class='game'>");
+              var name = $("#name");
     
               // Storing the rating data
               var rating = response.Rated;
     
               // Creating an element to have the rating displayed
-              var pOne = $("<p>").text("Rating: " + rating);
+              var pOne = $("<p>").text("Name of Game: " + name);
     
               // Displaying the rating
-              gameDiv.append(pOne);
+              name.append(pOne);
     
               // Storing the release year
               var released = response.Released;
