@@ -17,21 +17,17 @@ background-image: url(" ");
     /* margin: auto; */
 }
 
-.cardAll {
-    position: absolute;
-    width: 100%;
-    padding-right: 0px;
-    padding-left: 0px;
+#card {
 
+    margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px;
 }
 
 #rowCard{
     text-align: center;
     margin-top: 50px;
-  
 }
-
-
 
 .btn-primary {
     color: #fff;
