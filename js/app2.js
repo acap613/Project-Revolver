@@ -1,16 +1,31 @@
 $(document).ready(function () {
 
-    $("#myModal").modal('show');
-    
+    $("#myModal").modal();
 
-    var firebaseConfig = {
-        apiKey: "AIzaSyBmhEAC0h8yrrTxT4LBSPwBOwm7yo4GmJA",
-        authDomain: "revolver-ceb06.firebaseapp.com",
-        databaseURL: "https://revolver-ceb06.firebaseio.com",
-        projectId: "revolver-ceb06",
-        storageBucket: "revolver-ceb06.appspot.com",
-        messagingSenderId: "436349848784",
-        appId: "1:436349848784:web:632121ac7c76b2096522d5"
+   
+     $("#loginButton").on('click', function (e) {
+         console.log("button");
+        
+         var newText = $("#userNameInput:text").val();
+         console.log(newText);
+         var printName = $("#userName");
+         console.log(printName);
+         printName.text(newText);
+      
+       
+       
+     });
+
+
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyCwcMO8a208i8hRO2bLwSw6hQoIptXPrYE",
+        authDomain: "erudite-flag-256023.firebaseapp.com",
+        databaseURL: "https://erudite-flag-256023.firebaseio.com",
+        projectId: "erudite-flag-256023",
+        storageBucket: "erudite-flag-256023.appspot.com",
+        messagingSenderId: "218813116442",
+        appId: "1:218813116442:web:b5908560df242e62de61a3"
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);

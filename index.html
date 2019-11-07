@@ -11,7 +11,7 @@
   <!--Bootstrap-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
+
   <!--CSS-->
   <!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
@@ -24,42 +24,45 @@
   <!-- <link type="text/css" rel="stylesheet" href="./assets/css/materialize.css" media="screen,projection" /> -->
 
   <script>
-
-</script>
+  </script>
 
 </head>
 
 <body>
-      <!--MODAL-->
-      <div id="myModal" class="modal fade">
+  <!--MODAL-->
+  <div id="myModal" class="modal fade">
 
-          <div class="modal-dialog">
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
-                      <h4 class="modal-title">Revolver</h4>
-                  </div>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
+          <h4 class="modal-title">Revolver Login</h4>
+        </div>
 
-                  <div class="modal-body">
-              <p>Woohoo, enter your name to save your selection!</p>
-                      <form>
-                          <div class="form-group">
-                              <input type="text" class="form-control" placeholder="Name">
-                          </div>
-                          <button id="sign" type="submit" class="btn btn-primary">Sign-In</button>
-                      </form>
-                  </div>
-              </div>
-          </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <p>Woohoo, enter your name to save your selection!</p>
+          <form>
+            <div class="form-group">
+              <input id="userNameInput" type="text" class="form-control" placeholder="Name">
+            </div>
+            <button id="loginButton" type="submit" class="btn btn-success btn-block" data-dismiss="modal"><span class="glyphicon glyphicon-off"></span> Login</button>
+           
+          </form>
+        </div>
+        <div class="modal-footer"></div>
       </div>
+    </div>
+  </div>
 
   <!-- NAVBAR -->
-  <nav class="navbar navbar-light bg-light lg-8 md-4" >
+  <nav class="navbar navbar-light bg-light lg-8 md-4">
     <span class="navbar-brand ">REVOLVER</span>
     <form class="form-inline col-md-6">
+
       <!-- SEARCH BUTTON-->
       <input id="inputSearch" class="form-control  col-md-4" type="search" placeholder="Search" aria-label="Search">
       <button id="buttonSearch" class="btn btn-outline-success col-md-4" type="submit">Search</button>
+      <p id="userName" text=""> </p>
     </form>
   </nav>
   <!-- </div> -->
@@ -94,7 +97,9 @@
 
   <!--Script-->
   <script src="./js/app2.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
   <!-- <script type="text/javascript" src="./js/materialize.js"></script> -->
 </body>
 
