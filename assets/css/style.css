@@ -37,6 +37,10 @@
      /* border: 1px solid red; */
  }
 
+ .btn-outline-success {
+     background-color: whitesmoke;
+ }
+
  /* CARD */
 
  .container {
@@ -108,7 +112,7 @@
          width: 100%;
      }
      .no-gutters {
-         margin-top: 50px;
+         margin-top: 200px;
          ;
      }
      #userName {
