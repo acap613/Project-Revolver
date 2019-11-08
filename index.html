@@ -51,46 +51,41 @@
   </div>
 
   <!-- NAVBAR -->
-  <nav class="navbar navbar-light bg-light lg-8 md-4">
-    <span class="navbar-brand ">Revolver</span>
-    <form class="form-inline col-md-6">
 
-      <!-- SEARCH BUTTON inside NavBar -->
-      <div class="row"></div>
-      <input id="inputSearch" class="form-control  col-md-6" type="search" placeholder="Search" aria-label="Search">
-      <button id="buttonSearch" class="btn btn-outline-success col-md-3" type="submit">Search</button>
-      <p id="userName" text="" class=" col-md-3"> </p>
-      </div>
-    </form>
-  </nav>
-
+  <div class=".container-fluid">
+    <nav class="navbar navbar-collapse navbar-light bg-light my-0">
+      <span class="navbar-brand ">Revolver</span>
+      <!-- SEARCH BUTTON-->
+        <form class="form-inline  ">
+        <div class="row ">
+          <input id="inputSearch" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button id="buttonSearch" class="btn btn-outline-success my-2 my-sm-0 " type="submit">Search</button>
+          <p id="userName" text="" class=" "> </p>
+        </div>
+      </form>
+    </nav>
+  </div>
 
   <!-- CARD -->
+
   <div class="container">
-    <div class="row"></div>
-
-    <div id="card">
-      <div class="row no-gutters">
-        <div class="img col-md-4">
-          <!-- IMAGE -->
-          <img src="./assets/images/gif_sword.gif" class="card-img" alt="">
-        </div>
-        <!-- TEXT INSIDE CARD-->
-        <div class="card-body col-md-8">
-          <h5 class="card-title">Game Title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-            additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-
-          <!-- LIKE/DISLIKE BUTTONS-->
-          <button id="buttonHeart"> <img id="like" src="./assets/images/heart02READY_500x700.jpeg"
-              width="50px"></button>
-          <button id="buttonSkull"><img id="dislike" src="./assets/images/skull02READY_500x700.jpeg"
-              width="50px"></button>
-        </div>
+    <div class="row no-gutters">
+      <div class="col-xs-12 col-md-4">
+        <!-- IMAGE -->
+        <img src="./assets/images/gif_sword.gif" class="card-img" alt="" width="100px">
+      </div>
+      <!-- TEXT INSIDE CARD-->
+      <div class="card-body col-xs-12 col-md-7">
+        <h5 class="card-title">Game Title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+          additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <!-- LIKE/DISLIKE BUTTONS-->
+        <button id="buttonHeart"> <img id="like" src="./assets/images/heart02READY_500x700.jpeg" width="50px"></button>
+        <button id="buttonSkull"><img id="dislike" src="./assets/images/skull02READY_500x700.jpeg"
+            width="50px"></button>
       </div>
     </div>
-  </div>
   </div>
 
 
