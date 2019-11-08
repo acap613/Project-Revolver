@@ -1,22 +1,13 @@
 $(document).ready(function () {
 
     $("#myModal").modal();
-
-   
      $("#loginButton").on('click', function (e) {
          console.log("button");
-        
          var newText = $("#userNameInput:text").val();
          console.log(newText);
-         var printName = $("#userName");
-         console.log(printName);
-         printName.text(newText);
-      
-       
-       
+         $("#userName").text("Hello " + newText);
+         console.log("userName input to navbar")
      });
-
-
 
     const firebaseConfig = {
         apiKey: "AIzaSyCwcMO8a208i8hRO2bLwSw6hQoIptXPrYE",
