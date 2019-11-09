@@ -26,85 +26,82 @@
 </head>
 
 <body class="bg">
-  <!-- <div> -->
 
-    <!--MODAL-->
-    <div id="myModal" class="modal fade">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
-            <h4 class="modal-title">Revolver Login</h4>
-          </div>
-          <div class="modal-body" style="padding:40px 50px;">
-            <p> <strong>Woohoo! </strong>Enter your name to save your selection.</p>
-            <form>
-              <div class="form-group">
-                <input id="userNameInput" type="text" class="form-control" placeholder="Name">
-              </div>
-              <button id="loginButton" type="submit" class="btn btn-success btn-block" data-dismiss="modal"><span
-                  class="glyphicon glyphicon-off"></span> Login</button>
-            </form>
-          </div>
-          <div class="modal-footer"></div>
+  <!--MODAL-->
+  <div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
+          <h4 class="modal-title">Revolver Login</h4>
         </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <p> <strong>Woohoo! </strong>Enter a username to start.</p>
+          <form>
+            <div class="form-group">
+              <input id="userNameInput" type="text" class="form-control" placeholder="username">
+            </div>
+            <button id="loginButton" type="submit" class="btn btn-success btn-block" data-dismiss="modal"><span
+                class="glyphicon glyphicon-off"></span> Login</button>
+          </form>
+        </div>
+        <div class="modal-footer"></div>
       </div>
     </div>
+  </div>
 
-    <!-- NAVBAR -->
-
-    <div class=".container-fluid">
-      <nav class="navbar navbar-collapse navbar-light bg-light my-0">
-        <span id="brand" class="navbar-brand ">Revolver</span>
-        <!-- SEARCH BUTTON-->
-        <form class="form-inline my-4 my-lg-0">
-          <input id="inputSearch" class="form-control mr-sm-12" type="search" placeholder="Search" aria-label="Search">
-          <button id="buttonSearch" class="btn btn-outline-success my-2 my-sm-12" type="submit">Search</button>
-          <p id="userName" text="" class=" userName sm-12"> </p>
-        </form>
-      </nav>
+  <!-- NAVBAR -->
+  <div class=".container-fluid">
+    <nav class="navbar navbar-collapse navbar-light bg-light my-0">
+      <div>
+      <span id="brand" class="navbar-brand col-xs-3-md-5">Revolver</span>
+      <span id="moto">Video-games ratings, scores and more</span>
     </div>
+      <!-- SEARCH BUTTON-->
+      <form class="form-inline my-4 my-lg-0">
+        <input id="inputSearch" class="form-control mr-sm-12" type="search" placeholder="Search" aria-label="Search">
+        <button id="buttonSearch" class="btn btn-outline-success my-2 my-sm-12" type="submit">Search</button>
+        <p id="userName" text="" class=" userName sm-12"> </p>
+      </form>
+    </nav>
+  </div>
 
-    <!-- CARD -->
-    <div class="container">
-      <div class="row no-gutters">
-        <div class="col-xs-12 col-md-4">
-          <!-- IMAGE -->
-          <img src="" class="card-img" alt="" width="100px">
-          <!-- Image to link with array-->
-        </div>
-        <!-- TEXT INSIDE CARD-->
-        <div class="card-body col-xs-12 col-md-7">
-          <h5 class="card-title"></h5> <!-- Name from RAWG -->
-          <h6 class="card-developer"></h6> <!-- Developer from CHICKEN -->
-          <p class="card-date"></p> <!-- Date released from RAWG -->
-          <p class="card-rating-rawg"></p> <!-- Rating from RAWG -->
-          <p class="card-rating-chicken"></p> <!-- Rating from CHICKEN -->
-          <p class="card-score-rawg"></p> <!-- Score from RAWG -->
-          <p class="card-score-chicken"></p> <!-- Score from RAWG -->
-          <p class="card-store"></p> <!-- Store from RAWG -->
-          <p class="card-platform"></p> <!-- Platform from RAWG -->
-          <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
-          <!-- LIKE/DISLIKE BUTTONS-->
-          <button id="buttonHeart"> <img id="like" src="./assets/images/heart02READY_500x700.jpeg"
-              width="50px"></button>
-          <!-- Button to link with DB-->
-          <button id="buttonSkull"><img id="dislike" src="./assets/images/skull02READY_500x700.jpeg"
-              width="50px"></button> <!-- Button to link with delete .remove()-->
-        </div>
+  <!-- CARD -->
+  <div id="mainCard" class="container">
+    <div class="row no-gutters">
+      <div class="col-xs-12 col-md-4">
+        <!-- IMAGE -->
+        <img src="" class="card-img" alt="" width="100px">
+        <!-- Image to link with array-->
+      </div>
+      <!-- TEXT INSIDE CARD-->
+      <div class="card-body col-xs-12 col-md-7">
+        <h5 class="card-title"></h5> <!-- Name from RAWG -->
+        <h6 class="card-developer"></h6> <!-- Developer from CHICKEN -->
+        <p class="card-date"></p> <!-- Date released from RAWG -->
+        <p class="card-rating-rawg"></p> <!-- Rating from RAWG -->
+        <p class="card-rating-chicken"></p> <!-- Rating from CHICKEN -->
+        <p class="card-score-rawg"></p> <!-- Score from RAWG -->
+        <p class="card-score-chicken"></p> <!-- Score from RAWG -->
+        <p class="card-store"></p> <!-- Store from RAWG -->
+        <p class="card-platform"></p> <!-- Platform from RAWG -->
+        <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+        <!-- LIKE/DISLIKE BUTTONS-->
+        <button id="buttonHeart"> <img id="like" src="./assets/images/heart02READY_500x700.jpeg" width="50px"></button>
+        <!-- Button to link with DB-->
+        <button id="buttonSkull"><img id="dislike" src="./assets/images/skull02READY_500x700.jpeg"
+            width="50px"></button> <!-- Button to link with delete .remove()-->
       </div>
     </div>
-
-  <!-- </div> -->
-
+  </div>
   <!--Script-->
   <script src="./js/app2.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
   <!-- <script type="text/javascript" src="./js/materialize.js"></script> -->
-</body>
 
+</body>
 
 <footer> ... </footer>
 

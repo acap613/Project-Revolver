@@ -37,6 +37,10 @@
      /* border: 1px solid red; */
  }
 
+ #moto {
+     color: whitesmoke;
+ }
+
  .btn-outline-success {
      background-color: whitesmoke;
  }
