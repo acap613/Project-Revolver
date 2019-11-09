@@ -20,30 +20,30 @@ $(function () {
     // MAIN FUNCTION ---------------------------------------------------------------------
     function displayGameInfo(game) {
 
-        // GET Method to acces RAWG (API#01) --------------------------------------------------
-        // var settings = {
-        //     "async": true,
-        //     "crossDomain": true,
-        //     "url": "https://api.rawg.io/api/games?page_size=1&search=" + game + "",
-        //     "method": "GET",
-        //     "headers": {
-        //         "x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com",
-        //         "x-rapidapi-key": "f0457cbf4fmshcbc3914de65cf34p14fc1cjsn44b4be2f300a"
-        //     }
-        // }
+      //  GET Method to acces RAWG (API#01) --------------------------------------------------
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://api.rawg.io/api/games?page_size=1&search=" + game + "",
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com",
+                "x-rapidapi-key": "f0457cbf4fmshcbc3914de65cf34p14fc1cjsn44b4be2f300a"
+            }
+        }
 
-        //jQuery AJAX to retrieve API#01 infos -----------------------------------------------------------------------------------
-        // $.ajax(settings).done(function (response) {
-        //     console.log('response', response);
-        //     $(".card-title").text(JSON.stringify(response.results[0].name)); //Name  
-        //     // console.log('checking', $("#name")[0].textContent)
-        //     $("#date").text(JSON.stringify(response.results[0].released)); //Date Released
-        //     $("#rating-rawg").text(JSON.stringify("RAWG's rating: " + response.results[0].rating)); //Rating
-        //     $("#score-rawg").text(JSON.stringify("RAWG's score: " + response.results[0].score)); //Score
-        //     $("#store").text(JSON.stringify(response.results[0].stores[0].store.name)); //Store
-        //     $("#platform").text(JSON.stringify(response.results[0].platforms[0].platform.name)); //Platform
-        //     // $("#img-RAWG").attr(response.results[0].image); //MISSING IMG
-        // });
+       // jQuery AJAX to retrieve API#01 infos -----------------------------------------------------------------------------------
+        $.ajax(settings).done(function (response) {
+            console.log('response', response);
+            $(".card-title").text(JSON.stringify(response.results[0].name)); //Name  
+            // console.log('checking', $("#name")[0].textContent)
+            $("#date").text(JSON.stringify(response.results[0].released)); //Date Released
+            $("#rating-rawg").text(JSON.stringify("RAWG's rating: " + response.results[0].rating)); //Rating
+            $("#score-rawg").text(JSON.stringify("RAWG's score: " + response.results[0].score)); //Score
+            $("#store").text(JSON.stringify(response.results[0].stores[0].store.name)); //Store
+            $("#platform").text(JSON.stringify(response.results[0].platforms[0].platform.name)); //Platform
+            // $("#img-RAWG").attr(response.results[0].image); //MISSING IMG
+        });
 
         // GET Method to acces CHICKEN-COOP (API#02) --------------------------------------------------
         var settings = {
