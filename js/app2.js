@@ -37,11 +37,11 @@ $(function () {
             console.log('response', response);
             $(".card-title").text(JSON.stringify(response.results[0].name)); //Name  
             // console.log('checking', $("#name")[0].textContent)
-            $("#date").text(JSON.stringify(response.results[0].released)); //Date Released
-            $("#rating-rawg").text(JSON.stringify("RAWG's rating: " + response.results[0].rating)); //Rating
-            $("#score-rawg").text(JSON.stringify("RAWG's score: " + response.results[0].score)); //Score
-            $("#store").text(JSON.stringify(response.results[0].stores[0].store.name)); //Store
-            $("#platform").text(JSON.stringify(response.results[0].platforms[0].platform.name)); //Platform
+            $(".card-date").text(JSON.stringify(response.results[0].released)); //Date Released
+            $(".card-rating-rawg").text(JSON.stringify("RAWG's rating: " + response.results[0].rating)); //Rating
+            $(".card-score-rawg").text(JSON.stringify("RAWG's score: " + response.results[0].score)); //Score
+            $(".card-store").text(JSON.stringify(response.results[0].stores[0].store.name)); //Store
+            $(".card-platform").text(JSON.stringify(response.results[0].platforms[0].platform.name)); //Platform
             // $("#img-RAWG").attr(response.results[0].image); //MISSING IMG
         });
 
@@ -103,19 +103,39 @@ var database = firebase.database();
 $("#buttonHeart").on("click", function (event) {
     event.preventDefault();
 
-    var gameName = $(".card-title")[0].textContent; //NAME OF GAME
-    console.log('db test', $(".card-title")[0].textContent);
-    var gameDeveloper = $(".card-developer")[0].textContent; //DEVELOPER
+
+    // $("#date").text(JSON.stringify(response.results[0].released)); //Date Released
+    // $("#rating-rawg").text(JSON.stringify("RAWG's rating: " + response.results[0].rating)); //Rating
+    // $("#score-rawg").text(JSON.stringify("RAWG's score: " + response.results[0].score)); //Score
+    // $("#store").text(JSON.stringify(response.results[0].stores[0].store.name)); //Store
+    // $("#platform").text(JSON.stringify(response.results[0].platforms[0].platform.name)); //Platform
+
+    var gameNameRAWG = $(".card-title")[0].textContent;
+    // console.log($(".card-title")[0].textContent);
+    var dateRAWG = $(".card-date")[0].textContent;
+    // console.log($(".card-date")[0].textContent);
+    var scoreRAWG = $(".card-score-rawg")[0].textContent;
+    var storeRAWG = $(".card-store")[0].textContent;
+    var platformRAWG = $(".card-platform")[0].textContent;
+
+    // var gameName = $(".card-title")[0].textContent; //NAME OF GAME CHICKEN
+    // console.log('db test', $(".card-title")[0].textContent);
+    var gameDeveloper = $(".card-developer")[0].textContent; //DEVELOPER CHICKEN
     console.log('db test2', $(".card-developer"));
-    var gameRating = $(".card-rating-chicken")[0].textContent; //RATING
+    var gameRating = $(".card-rating-chicken")[0].textContent; //RATING CHICKEN
     console.log('db test3', $(".card-rating-chicken"));
-    var gameScore = $(".card-score-chicken")[0].textContent; //SCORE
+    var gameScore = $(".card-score-chicken")[0].textContent; //SCORE CHICKEN
     console.log('db test4', $(".card-score-chicken"));
 
     //... SEND these key/values TO THE FIREBASE ------------------------------------------------------------------
 
     database.ref().push({
-        name: gameName,
+        nameRAWG: gameNameRAWG,
+        dateRAWG: dateRAWG,
+        scoreRAWG: scoreRAWG,
+        storeRAWG : storeRAWG,
+        platformRAWG : platformRAWG,
+
         developer: gameDeveloper,
         rating: gameRating,
         score: gameScore,
