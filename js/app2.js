@@ -37,11 +37,13 @@ $(function () {
             console.log('response', response);
             $(".card-title").text(JSON.stringify(response.results[0].name)); //Name  
             // console.log('checking', $("#name")[0].textContent)
+
             $(".card-date").text(JSON.stringify(response.results[0].released)); //Date Released
             $(".card-rating-rawg").text(JSON.stringify("RAWG's rating: " + response.results[0].rating)); //Rating
             $(".card-score-rawg").text(JSON.stringify("RAWG's score: " + response.results[0].score)); //Score
             $(".card-store").text(JSON.stringify(response.results[0].stores[0].store.name)); //Store
             $(".card-platform").text(JSON.stringify(response.results[0].platforms[0].platform.name)); //Platform
+
             // $("#img-RAWG").attr(response.results[0].image); //MISSING IMG
         });
 
