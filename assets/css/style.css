@@ -1,63 +1,129 @@
- body {
-    background-image: url();
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    /* width:100%; */
-  } 
+ /* .body {
+     background-image: url(" "); 
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-size: cover;
+      width:100%; 
+ } */
 
-.bg-light {
-background-image: url(" ");
-}
+ .bg {
+     background-image: url(" ");
+     /* background-color: rgb(101, 175, 150); */
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-size: cover;
+     height: 100%;
+ }
 
-.navbar-light  {
-    color: red;
-    width: 100%;
-    height: 100px;
-    /* margin: auto; */
-}
+ #myModal .modal-content {
+     border-radius: 10px;
+ }
 
-.cardAll {
-    position: absolute;
-    width: 100%;
-    padding-right: 0px;
-    padding-left: 0px;
+ .bg-light {
+     background-image: url(" ");
+ }
 
-}
+ .navbar-light {
+     /* color: rgba(34, 221, 34, 0.9); */
+     width: 100%;
+     height: 100px;
+     background-image: url("../images/img_abstract02.jpg");
+ }
 
-#rowCard{
-    text-align: center;
-    margin-top: 50px;
-  
-}
+ #brand {
+     color: whitesmoke;
+     font-size: 3em;
+     /* text-align: justify; */
+     /* border: 1px solid red; */
+ }
 
+ #moto {
+     color: whitesmoke;
+ }
 
+ .btn-outline-success {
+     background-color: whitesmoke;
+ }
 
-.btn-primary {
-    color: #fff;
-    background-color:blue;
-    border-color: red;
-    text-align: center;
-    margin-top: 100px;
-}
+ /* CARD */
 
-.btn-secondary {
-    color: #fff;
-    background-color: red;
-    border-color: red;
-    text-align: center;
-    margin-top: 100px;
-}
+ .container {
+     margin-top: 20px;
+     margin-bottom: 20px;
+     padding: 0;
+     background-color: azure;
+     border-radius: 10px;
+ }
 
+ .no-gutters {
+     border-radius: 10px;
+     border: 3px solid #003300;
+ }
 
-@media (min-width: 768px){
-.col-md-8 {
-    width:100%;
-}
-/* .card-image {
-    width:50%;
-} */
-.card-body{
-    width: 100%;
-}
-}
+ .card-img {
+     padding: 10px;
+     display: block;
+     max-width: 100%;
+     height: auto;
+ }
+
+ #buttonHeart, #buttonSkull {
+     border-radius: 10px;
+     border: 2px solid #003300;
+ }
+
+ #buttonHeart {
+     margin-left: 50px;
+ }
+
+ #userName {
+     color: #00e600;
+     margin: 10px;
+ }
+
+ /* Login style */
+
+ .modal-header, .modal-footer {
+     background-color: #003300;
+     background-image: url("../images/img_abstract02.jpg");
+ }
+
+ .modal-title {
+     color: white;
+ }
+
+ #loginButton {
+     background-color: #00e600;
+ }
+
+ footer {
+     position: fixed;
+     width: 100%;
+     left: 0;
+     bottom: 0;
+     background-image: url("../images/img_abstract02.jpg");
+ }
+
+ /* Breakpoints */
+
+ @media (max-width: 640px) {
+     .navbar-brand {
+         font-size: 1.5em;
+         margin: 0;
+         padding: 0;
+     }
+     #inputSearch, #buttonSearch {
+         width: 100%;
+     }
+     .no-gutters {
+         margin-top: 200px;
+         ;
+     }
+     #userName {
+         text-align: center;
+         background-color: #003300;
+         width: 100%;
+         margin-top: 10px;
+         border-radius: 5px;
+     }
+ }

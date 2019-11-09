@@ -20,66 +20,89 @@
   <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 
+  <!-- Materialize -->
+  <!-- <link type="text/css" rel="stylesheet" href="./assets/css/materialize.css" media="screen,projection" /> -->
+
 </head>
 
-<body>
-  <!-- NAVBAR -->
-  <div class="container" id="container1">
-    <!-- <div class="row"> -->
-    <nav class="navbar navbar-light bg-light">
-      <span class="navbar-brand mb-0 h1">Revolver</span>
-      <form class="form-inline my-2 my-lg-0">
-        <input id="inputSearch" class="form-control mr-sm-2 " type="search" placeholder="Search" aria-label="Search">
-        <button id="buttonSearch" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </nav>
-    <!-- </div> -->
-  </div>
+<body class="bg">
 
-  <!-- ARROWS SIDES -->
-  <div id="small12" class="container col-sm-12">
-    <div class="row" id="rowCard">
-
-      <div id="buttonBack" class="col-md-2">
-        <button type="button" class="btn btn-primary btn-lg ">
-
-          <</button> </div> <!-- CARD -->
-            <div id="cardAll" class="col-md-8 ">
-              <div class="card mb-3 " style="max-width:1000px;">
-                <div class="row no-gutters">
-                  <div class="col-md-4">
-                    <img src="./assets/images/gif_sword.gif" class="card-img" alt="">
-                  </div>
-                  <div class="col-md-8">
-                    <!-- TEXT INSIDE CARD-->
-                    <div class="card-body">
-                      <h5 class="card-title">Game Title</h5>
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional
-                        content. This content is a little bit longer.</p>
-                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                      <button id="buttonHeart"> <img id="like" src="./assets/images/heart02READY_500x700.jpeg"
-                          width="50px"></button>
-                      <button id="buttonSkull"><img id="dislike" src="./assets/images/skull02READY_500x700.jpeg"
-                          width="50px"></button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+  <!--MODAL-->
+  <div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
+          <h4 class="modal-title">Revolver Login</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <p> <strong>Woohoo! </strong>Enter a username to start.</p>
+          <form>
+            <div class="form-group">
+              <input id="userNameInput" type="text" class="form-control" placeholder="username">
             </div>
-
-            <div id="buttonNext" class="col-md-2">
-              <button type="button" class="btn btn-secondary btn-lg ">>
-              </button>
-            </div>
-
+            <button id="loginButton" type="submit" class="btn btn-success btn-block" data-dismiss="modal"><span
+                class="glyphicon glyphicon-off"></span> Login</button>
+          </form>
+        </div>
+        <div class="modal-footer"></div>
       </div>
     </div>
+  </div>
 
-    <!--Script-->
-    <script src="./js/app2.js"></script>
+  <!-- NAVBAR -->
+  <div class=".container-fluid">
+    <nav class="navbar navbar-collapse navbar-light bg-light my-0">
+      <div>
+      <span id="brand" class="navbar-brand col-xs-3-md-5">Revolver</span>
+      <span id="moto">Video-games ratings, scores and more</span>
+    </div>
+      <!-- SEARCH BUTTON-->
+      <form class="form-inline my-4 my-lg-0">
+        <input id="inputSearch" class="form-control mr-sm-12" type="search" placeholder="Search" aria-label="Search">
+        <button id="buttonSearch" class="btn btn-outline-success my-2 my-sm-12" type="submit">Search</button>
+        <p id="userName" text="" class=" userName sm-12"> </p>
+      </form>
+    </nav>
+  </div>
+
+  <!-- CARD -->
+  <div id="mainCard" class="container">
+    <div class="row no-gutters">
+      <div class="col-xs-12 col-md-4">
+        <!-- IMAGE -->
+        <img src="" class="card-img" alt="" width="100px">
+        <!-- Image to link with array-->
+      </div>
+      <!-- TEXT INSIDE CARD-->
+      <div class="card-body col-xs-12 col-md-7">
+        <h5 class="card-title"></h5> <!-- Name from RAWG -->
+        <h6 class="card-developer"></h6> <!-- Developer from CHICKEN -->
+        <p class="card-date"></p> <!-- Date released from RAWG -->
+        <p class="card-rating-rawg"></p> <!-- Rating from RAWG -->
+        <p class="card-rating-chicken"></p> <!-- Rating from CHICKEN -->
+        <p class="card-score-rawg"></p> <!-- Score from RAWG -->
+        <p class="card-score-chicken"></p> <!-- Score from RAWG -->
+        <p class="card-store"></p> <!-- Store from RAWG -->
+        <p class="card-platform"></p> <!-- Platform from RAWG -->
+        <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+        <!-- LIKE/DISLIKE BUTTONS-->
+        <button id="buttonHeart"> <img id="like" src="./assets/images/heart02READY_500x700.jpeg" width="50px"></button>
+        <!-- Button to link with DB-->
+        <button id="buttonSkull"><img id="dislike" src="./assets/images/skull02READY_500x700.jpeg"
+            width="50px"></button> <!-- Button to link with delete .remove()-->
+      </div>
+    </div>
+  </div>
+  <!--Script-->
+  <script src="./js/app2.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <!-- <script type="text/javascript" src="./js/materialize.js"></script> -->
+
 </body>
 
-<footer></footer>
+<footer> ... </footer>
 
 </html>
