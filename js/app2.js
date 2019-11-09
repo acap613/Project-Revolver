@@ -37,11 +37,18 @@ $(function () {
             console.log('response', response);
             $(".card-title").text(JSON.stringify(response.results[0].name)); //Name  
             // console.log('checking', $("#name")[0].textContent)
+
             $(".card-date").text(JSON.stringify(response.results[0].released)); //Date Released
             $(".card-rating-rawg").text(JSON.stringify(response.results[0].rating + "/5")); //Rating
             $(".card-score-rawg").text(JSON.stringify("RAWG's score: " + response.results[0].score)); //Score
+<<<<<<< HEAD
             $(".card-store").text(JSON.stringify("Store : " + response.results[0].stores[0].store.name)); //Store
             $(".card-platform").text(JSON.stringify("Platform: " + response.results[0].platforms[0].platform.name)); //Platform
+=======
+            $(".card-store").text(JSON.stringify(response.results[0].stores[0].store.name)); //Store
+            $(".card-platform").text(JSON.stringify(response.results[0].platforms[0].platform.name)); //Platform
+
+>>>>>>> b4b2832265cdfe8d56d0807385cdacd4c5fc6765
             // $("#img-RAWG").attr(response.results[0].image); //MISSING IMG
         });
 
