@@ -1,7 +1,10 @@
+
 // jQuery READY ---------------------------------------------------------------------------------------------------
 $(function () {
 
     // MODAL POP-UP ------------------------------------------------------------------------------------------------
+
+
     $("#myModal").modal();
     $("#loginButton").on('click', function (e) {
         var newText = $("#userNameInput:text").val();
@@ -10,38 +13,39 @@ $(function () {
         // console.log("userName input to navbar")
     });
 
+
     //ARRAY
     var games = [];
 
-    // MAIN FUNCTION -----------------------------------------------------------------------------------------------
+    // MAIN FUNCTION ---------------------------------------------------------------------
     function displayGameInfo(game) {
 
-        // GET Method to acces RAWG (API#01) -----------------------------------------------------------------------
-        var settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": "https://api.rawg.io/api/games?page_size=1&search=" + game + "",
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com",
-                "x-rapidapi-key": "f0457cbf4fmshcbc3914de65cf34p14fc1cjsn44b4be2f300a"
-            }
-        }
+        // GET Method to acces RAWG (API#01) --------------------------------------------------
+        // var settings = {
+        //     "async": true,
+        //     "crossDomain": true,
+        //     "url": "https://api.rawg.io/api/games?page_size=1&search=" + game + "",
+        //     "method": "GET",
+        //     "headers": {
+        //         "x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com",
+        //         "x-rapidapi-key": "f0457cbf4fmshcbc3914de65cf34p14fc1cjsn44b4be2f300a"
+        //     }
+        // }
 
-        //jQuery AJAX to retrieve API#01 infos --------------------------------------------------------------------
-        $.ajax(settings).done(function (response) {
-            console.log('response', response);
-            $(".card-title").text(JSON.stringify(response.results[0].name)); //Name  
-            // console.log('checking', $("#name")[0].textContent)
-            $("#date").text(JSON.stringify(response.results[0].released)); //Date Released
-            $("#rating-rawg").text(JSON.stringify("RAWG's rating: " + response.results[0].rating)); //Rating
-            $("#score-rawg").text(JSON.stringify("RAWG's score: " + response.results[0].score)); //Score
-            $("#store").text(JSON.stringify(response.results[0].stores[0].store.name)); //Store
-            $("#platform").text(JSON.stringify(response.results[0].platforms[0].platform.name)); //Platform
-            // $("#img-RAWG").attr(response.results[0].image); //MISSING IMG
-        });
+        //jQuery AJAX to retrieve API#01 infos -----------------------------------------------------------------------------------
+        // $.ajax(settings).done(function (response) {
+        //     console.log('response', response);
+        //     $(".card-title").text(JSON.stringify(response.results[0].name)); //Name  
+        //     // console.log('checking', $("#name")[0].textContent)
+        //     $("#date").text(JSON.stringify(response.results[0].released)); //Date Released
+        //     $("#rating-rawg").text(JSON.stringify("RAWG's rating: " + response.results[0].rating)); //Rating
+        //     $("#score-rawg").text(JSON.stringify("RAWG's score: " + response.results[0].score)); //Score
+        //     $("#store").text(JSON.stringify(response.results[0].stores[0].store.name)); //Store
+        //     $("#platform").text(JSON.stringify(response.results[0].platforms[0].platform.name)); //Platform
+        //     // $("#img-RAWG").attr(response.results[0].image); //MISSING IMG
+        // });
 
-        // GET Method to acces CHICKEN-COOP (API#02) -------------------------------------------------------------
+        // GET Method to acces CHICKEN-COOP (API#02) --------------------------------------------------
         var settings = {
             "async": true,
             "crossDomain": true,
@@ -52,7 +56,7 @@ $(function () {
                 "x-rapidapi-key": "f0457cbf4fmshcbc3914de65cf34p14fc1cjsn44b4be2f300a"
             }
         }
-        //jQuery AJAX to retrieve API#02 Chicken-Coop infos ------------------------------------------------------
+        //jQuery AJAX to retrieve API#02 Chicken-Coop infos -----------------------------------------------------------------------------------
         $.ajax(settings).done(function (info) {
             console.log(info);
             $(".card-title").text(info.result.title); //NAME OF GAME
@@ -65,12 +69,11 @@ $(function () {
         });
     };
 
-    // Click on skull reloads the page ---------------------------------------------------------------------------
+    // Click on skull reloads the page --------------------------------------------------------------------------
     $(document).on("click", "#buttonSkull", () => {
         location.reload();
     });
 
-    // When Search button is clicked -----------------------------------------------------------------------------
     $(document).on("click", "#buttonSearch", () => {
         event.preventDefault(); //prevents pop-up
         var game = $("#inputSearch");
@@ -79,7 +82,6 @@ $(function () {
 }); //End of MAIN FUNCTION
 
 
-// FIREBASE KEY --------------------------------------------------------------------------------------------------
 const firebaseConfig = {
     apiKey: "AIzaSyCwcMO8a208i8hRO2bLwSw6hQoIptXPrYE",
     authDomain: "erudite-flag-256023.firebaseapp.com",
@@ -89,6 +91,7 @@ const firebaseConfig = {
     messagingSenderId: "218813116442",
     appId: "1:218813116442:web:b5908560df242e62de61a3"
 };
+
 
 // FIREBASE INIT -------------------------------------------------------------------------------------------------
 firebase.initializeApp(firebaseConfig);
@@ -110,11 +113,13 @@ $("#buttonHeart").on("click", function (event) {
     console.log('db test4', $(".card-score-chicken"));
 
     //... SEND these key/values TO THE FIREBASE ------------------------------------------------------------------
+
     database.ref().push({
         name: gameName,
         developer: gameDeveloper,
         rating: gameRating,
         score: gameScore,
+
     });
 });
 
