@@ -1,7 +1,10 @@
-// jQuery READY ------------------------------------------------------------------------
+
+// jQuery READY ---------------------------------------------------------------------------------------------------
 $(function () {
 
-    // MODAL POP-UP -----------------------------------------------------------------
+    // MODAL POP-UP ------------------------------------------------------------------------------------------------
+
+
     $("#myModal").modal();
     $("#loginButton").on('click', function (e) {
         var newText = $("#userNameInput:text").val();
@@ -9,6 +12,7 @@ $(function () {
         $("#userName").text("Hello " + newText);
         // console.log("userName input to navbar")
     });
+
 
     //ARRAY
     var games = [];
@@ -70,7 +74,6 @@ $(function () {
         location.reload();
     });
 
-    // When Search button is clicked ------------------------------------------------------------------------------------
     $(document).on("click", "#buttonSearch", () => {
         event.preventDefault(); //prevents pop-up
         var game = $("#inputSearch");
@@ -79,7 +82,6 @@ $(function () {
 }); //End of MAIN FUNCTION
 
 
-// FIREBASE ------------------------------------------------------------------
 const firebaseConfig = {
     apiKey: "AIzaSyCwcMO8a208i8hRO2bLwSw6hQoIptXPrYE",
     authDomain: "erudite-flag-256023.firebaseapp.com",
@@ -90,22 +92,28 @@ const firebaseConfig = {
     appId: "1:218813116442:web:b5908560df242e62de61a3"
 };
 
-// FIREBASE INIT ---------------------------------------------------------------------------------------
+
+// FIREBASE INIT -------------------------------------------------------------------------------------------------
 firebase.initializeApp(firebaseConfig);
 
-//FIREBASE REF--------------------------------------------------------------------------------------------
+//FIREBASE REF----------------------------------------------------------------------------------------------------
 var database = firebase.database();
 
-// on click event ... ---------------------------------------------------------------------------------------
+// on click event ... --------------------------------------------------------------------------------------------
 $("#buttonHeart").on("click", function (event) {
     event.preventDefault();
 
-    var gameName = $(".card-title").val(); //NAME OF GAME
-    var gameDeveloper = $(".card-developer").val(); //DEVELOPER
-    var gameRating = $(".card-rating-chicken").val(); //RATING
-    var gameScore = $(".card-score-chicken").val(); //SCORE
+    var gameName = $(".card-title")[0].textContent; //NAME OF GAME
+    console.log('db test', $(".card-title")[0].textContent);
+    var gameDeveloper = $(".card-developer")[0].textContent; //DEVELOPER
+    console.log('db test2', $(".card-developer"));
+    var gameRating = $(".card-rating-chicken")[0].textContent; //RATING
+    console.log('db test3', $(".card-rating-chicken"));
+    var gameScore = $(".card-score-chicken")[0].textContent; //SCORE
+    console.log('db test4', $(".card-score-chicken"));
 
-    //... SEND TO FIREBASE ---------------------------------------------------------------------------------------
+    //... SEND these key/values TO THE FIREBASE ------------------------------------------------------------------
+
     database.ref().push({
         name: gameName,
         developer: gameDeveloper,
