@@ -39,9 +39,12 @@ $(function () {
             // console.log('checking', $("#name")[0].textContent)
 
             $(".card-date").text(JSON.stringify(response.results[0].released)); //Date Released
-            $(".card-rating-rawg").text(JSON.stringify("RAWG's rating: " + response.results[0].rating)); //Rating
+
+            $(".card-rating-rawg").text(JSON.stringify(response.results[0].rating + "/5")); //Rating
             $(".card-score-rawg").text(JSON.stringify("RAWG's score: " + response.results[0].score)); //Score
-            $(".card-store").text(JSON.stringify(response.results[0].stores[0].store.name)); //Store
+
+            $(".card-store").text(JSON.stringify("Store : " + response.results[0].stores[0].store.name)); //Store
+            $(".card-platform").text(JSON.stringify("Platform: " + response.results[0].platforms[0].platform.name)); //Platform
             $(".card-platform").text(JSON.stringify(response.results[0].platforms[0].platform.name)); //Platform
 
             // $("#img-RAWG").attr(response.results[0].image); //MISSING IMG
@@ -61,9 +64,9 @@ $(function () {
         //jQuery AJAX to retrieve API#02 Chicken-Coop infos -----------------------------------------------------------------------------------
         $.ajax(settings).done(function (info) {
             console.log(info);
-            $(".card-title").text(info.result.title); //NAME OF GAME
+            $(".card-title").text("Title :" + info.result.title); //NAME OF GAME
             $(".card-developer").text("Developed by: " + info.result.developer); //DEVELOPER
-            $(".card-rating-chicken").text("Chicken-coop's rating: " + info.result.rating); //RATING
+            $(".card-rating-chicken").text("Rated: " + info.result.rating); //RATING
             $(".card-score-chicken").text("Chicken-coop's score: " + info.result.score); //SCORE
             var url = info.result.image;
             $(".card-img").attr('src', url); //IMAGE
@@ -83,7 +86,6 @@ $(function () {
     });
 }); //End of MAIN FUNCTION
 
-
 const firebaseConfig = {
     apiKey: "AIzaSyCwcMO8a208i8hRO2bLwSw6hQoIptXPrYE",
     authDomain: "erudite-flag-256023.firebaseapp.com",
@@ -94,7 +96,6 @@ const firebaseConfig = {
     appId: "1:218813116442:web:b5908560df242e62de61a3"
 };
 
-
 // FIREBASE INIT -------------------------------------------------------------------------------------------------
 firebase.initializeApp(firebaseConfig);
 
@@ -104,13 +105,6 @@ var database = firebase.database();
 // on click event ... --------------------------------------------------------------------------------------------
 $("#buttonHeart").on("click", function (event) {
     event.preventDefault();
-
-
-    // $("#date").text(JSON.stringify(response.results[0].released)); //Date Released
-    // $("#rating-rawg").text(JSON.stringify("RAWG's rating: " + response.results[0].rating)); //Rating
-    // $("#score-rawg").text(JSON.stringify("RAWG's score: " + response.results[0].score)); //Score
-    // $("#store").text(JSON.stringify(response.results[0].stores[0].store.name)); //Store
-    // $("#platform").text(JSON.stringify(response.results[0].platforms[0].platform.name)); //Platform
 
     var gameNameRAWG = $(".card-title")[0].textContent;
     // console.log($(".card-title")[0].textContent);
@@ -138,8 +132,8 @@ $("#buttonHeart").on("click", function (event) {
         storeRAWG : storeRAWG,
         platformRAWG : platformRAWG,
 
+        rating: gameRating, 
         developer: gameDeveloper,
-        rating: gameRating,
         score: gameScore,
 
     });
